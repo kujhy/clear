@@ -2,6 +2,7 @@ require "../expression/expression"
 
 require "pg"
 require "db"
+require "uuid"
 
 require "./errors"
 require "./logger"
@@ -53,6 +54,7 @@ module Clear
                 PG::Geo::Line | PG::Geo::LineSegment | PG::Geo::Path | PG::Geo::Point |
                 PG::Geo::Polygon | PG::Numeric | Slice(UInt8) | String | Time |
                 UInt8 | UInt16 | UInt32 | UInt64 | Clear::Expression::UnsafeSql |
+                UUID |
                 Nil
 
     include Clear::SQL::Logger
